@@ -1,21 +1,12 @@
-import { useState } from "react";
-import Dropdown from "./components/Dropdown";
-function App(){
-    const [selection, setSelection]=useState(null);
+import Link from './components/Link';
 
-    const handleSelect=(option)=>{
-        setSelection(option);
-    }
-    const options=[
-        {label:'Red', value:'red'},
-        {label: 'Green', value: 'green'},
-        {label: 'Blue', value: 'blue'}
-    ]
-    return (
-        <div className="flex">
-    <Dropdown options={options} value={selection} onChange={handleSelect}/>
-    <Dropdown options={options} value={selection} onChange={handleSelect}/>
-    </div>);
+function App() {
+  return (
+    <div>
+      <Link to="/accordion">Go to accordion</Link>
+      <Link to="/dropdown">Go to dropdown</Link>
+    </div>
+  );
 }
 
 export default App;
