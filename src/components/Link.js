@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import useNavigation from '../hooks/use-navigation';
 
-function Link({ to, children }) {
-  const { navigate } = useNavigation();
-  const className=classNames('text-blue-500');
+function Link({ to, children,addClass, activeClassName }) {
+  const { navigate,currentPath } = useNavigation();
+  const className=classNames('text-blue-500',addClass,currentPath===to&& activeClassName);
 
   const handleClick = (event) => {
     if(event.ctrlKey||event.metaKey){
@@ -15,7 +15,7 @@ function Link({ to, children }) {
     navigate(to);
   };
 
-  return <a className={className} href={to} onClick={handleClick}>{children}</a>;
+  return <a className={className} href={to} onClick={handleClick} >{children}</a>;
 }
 
 export default Link;
