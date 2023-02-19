@@ -30,7 +30,7 @@ function Button({
 
     })
 
-    return <button className={classes}>{children}</button>
+    return <button {...rest} className={classes}>{children}</button>
 }
 
 Button.propTypes={
