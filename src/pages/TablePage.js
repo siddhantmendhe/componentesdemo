@@ -10,14 +10,22 @@ function TablePage(){
     ];
 
     const config=[
-        {label:'Fruit'},
-        {label:'Color'},
-        {label:'Score'},
+        {label:'Name',
+         render:(fruit)=> <td className="p-3">{fruit.name}</td>},
+        {label:'Color',
+         render:(fruit)=> <div className={`p-3 m-2 ${fruit.color}`}></div>},
+        {label:'Score',
+         render:(fruit)=> <td className="p-3">{fruit.score}</td>},
     ];
-    
+
+    const keyFn=(fruit)=>{
+        return fruit.name;
+
+    }
+
     return(
         <div>
-            <Table data={data} config={config}/>
+            <Table data={data} config={config} keyFn={keyFn}/>
         </div>
     );
 }
