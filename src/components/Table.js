@@ -14,7 +14,7 @@ function Table({data,config,keyFn}){
     const renderedRows=data.map((rowData)=>{
         const renderedCels=config.map(column=>{
            
-            return <td key={column.label}>{column.render(rowData)}</td>;
+            return <td key={column.label}>{column.render(rowData)}</td>;    
 
         });
         return (
